@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+</head>
+<body>
+    <h2>Thank you for your order!</h2>
+    <p>We ordered {{info.num_items}} for you and charged your student account on {{info.date}}</p>
+    <h3>You've ordered</h3>
+    <table>
+        <tr>
+            <th>Fruit Name</th>
+            <th>Quantity</th>
+        </tr>
+        {% for fruit in fruits %}
+            <tr>
+                <td>fruit.name</td>
+                <td>fruit.quantity</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <h3>Your information</h3>
+    <p>Name: Neil</p>
+    <p>Student ID: 95021665</p>
+</body>
+</html>
