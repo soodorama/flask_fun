@@ -17,5 +17,9 @@ def say(name):
 def repeat(num, str):
     return str * int(num)
 
+@app.route('/jinja2/<phrase>')
+def jinja(phrase):
+    return render_template("repeat.html", phrase=phrase, times=2)
+
 if __name__ == "__main__":
     app.run(debug=True)
