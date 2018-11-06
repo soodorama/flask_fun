@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
@@ -11,7 +11,7 @@ def dojo():
 
 @app.route('/say/<name>')
 def say(name):
-    return "Hi " + name + "!"
+    return render_template("index.html", name=name)
 
 @app.route('/repeat/<num>/<str>') # for a route '/users/____/____', two parameters in the url get passed as username and id
 def repeat(num, str):
