@@ -19,7 +19,13 @@ def repeat(num, str):
 
 @app.route('/jinja2/<phrase>')
 def jinja(phrase):
-    return render_template("repeat.html", phrase=phrase, times=2)
+    student_info = (
+       {'name' : 'Michael', 'age' : 35},
+       {'name' : 'John', 'age' : 30 },
+       {'name' : 'Mark', 'age' : 25},
+       {'name' : 'KB', 'age' : 27}
+    )
+    return render_template("repeat.html", phrase=phrase, times=2, students=student_info)
 
 if __name__ == "__main__":
     app.run(debug=True)
