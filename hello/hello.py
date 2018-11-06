@@ -13,7 +13,7 @@ def dojo():
 def say(name):
     return render_template("index.html", name=name)
 
-@app.route('/repeat/<num>/<str>') # for a route '/users/____/____', two parameters in the url get passed as username and id
+@app.route('/repeat/<num>/<str>')
 def repeat(num, str):
     return str * int(num)
 
