@@ -5,11 +5,15 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route('/users', methods=['POST'])
+@app.route('/result', methods=['POST'])
 def create():
-    name = request.form['name']
-    email = request.form['email']
-    return redirect('/')
+    info = {
+        'name': request.form['name'],
+        'location': request.form['loc'],
+        'language': request.form['lang'],
+        'comment': request.form['comment']
+    }
+    return render_template("result.html", info=info)
 
 if __name__ == "__main__":
     app.run(debug=True)

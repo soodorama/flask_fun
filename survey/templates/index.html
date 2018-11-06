@@ -8,10 +8,19 @@
 <body>
     <h1>Index Page</h1>
     <h3>Create a User</h3>
-    <form action='/users' method='post'>
+    <form action='/result' method='post'>
         Name: <input type='text' name='name'>
-        Email: <input type='text' name='email'>
-        <input type='submit' value='create user'>
+        Location: <select name="loc">
+            <option value="San Jose">San Jose</option>
+            <option value="Emeryville">Emeryville</option>
+        </select>
+        Language: <select name="lang">
+            <option value="Python">Python</option>
+            <option value="Swift">Swift</option>
+        </select>
+        Comment (optional):
+        <textarea name="comment" cols="30" rows="10"></textarea>
+        <input type='submit' value='Submit'>
     </form>
 </body>
 </html>
