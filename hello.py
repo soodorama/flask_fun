@@ -5,20 +5,17 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello World!'
 
-@app.route('/success')
-def successcopy():
-  return "success"
+@app.route('/dojo')
+def dojo():
+  return "Dojo!"
 
-@app.route('/hello/<name>') # for a route '/hello/____' anything after '/hello/' gets passed as a variable 'name'
-def hello(name):
-    print(name)
-    return "hello " + name
+@app.route('/say/<name>')
+def say(name):
+    return "Hi " + name + "!"
 
-@app.route('/users/<username>/<id>') # for a route '/users/____/____', two parameters in the url get passed as username and id
-def show_user_profile(username, id):
-    print(username)
-    print(id)
-    return "username: " + username + ", id: " + id
+@app.route('/repeat/<num>/<str>') # for a route '/users/____/____', two parameters in the url get passed as username and id
+def repeat(num, str):
+    return str * int(num)
 
 if __name__ == "__main__":
     app.run(debug=True)
